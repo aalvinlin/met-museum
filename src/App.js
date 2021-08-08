@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import SearchResults from "./components/SearchResults";
 
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <SearchForm userInput={userInput} setUserInput={setUserInput} />
       <SearchResults results={results} />
     </div>
