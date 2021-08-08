@@ -12,8 +12,8 @@ const SearchForm = ({userInput, setUserInput}) => {
 
     return (
         <form id="searchForm" onSubmit={handleSubmit}>
-            <label>Search for an artist or keyword:</label>
-            <input type="searchInput" onInput={handleInput}></input>
+            <label for="searchInput">Search for an artist or keyword:</label>
+            <input type="searchInput" id="searchInput" onInput={handleInput}></input>
         </form>
     );
 }
