@@ -17,7 +17,7 @@ function App() {
     console.log("querying", queryURL)
 
     axios.get(queryURL)
-      .then(results => setDataRetrieved(results))
+      .then(results => setDataRetrieved(results.data))
       .catch(error => console.error(error))
   }, [userInput])
 
