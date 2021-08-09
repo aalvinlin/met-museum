@@ -13,7 +13,8 @@ function App() {
 
   useEffect(() => {
 
-    const queryURL = process.env.REACT_APP_PROXY_SERVER + "/" + userInput;
+    const queryURL = process.env.REACT_APP_PROXY_SERVER + "/q=" + userInput;
+    console.log("querying", queryURL)
 
     axios.get(queryURL)
       .then(results => setDataRetrieved(results))
