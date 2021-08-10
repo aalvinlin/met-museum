@@ -35,15 +35,25 @@ const SearchNavigation = ({totalPages, resultsPerPage, currentPage, setCurrentPa
                 { pageLinks[i] = i + 1; }
         }
 
+    const handlePrevClick = () => {
+        if (currentPage > 1)
+            { setCurrentPage(currentPage - 1); }
+    }
+
+    const handleNextClick = () => {
+        if (currentPage < totalPages)
+            { setCurrentPage(currentPage + 1); }
+    }
+
     return (
         <div class="searchNavigation">
-            <span className={ currentPage > 1 ? "page-previous" : "page-previous disabled"}> Previous </span>
+            <span className={ currentPage > 1 ? "pagePrev" : "pagePrev navDisabled"} onClick={handlePrevClick}> Prev </span>
             {pageLinks.map(page => {
 
-                return <span key={`pageLink_${page}`} className={page === currentPage ? "currentPage" : ""}> {page} </span>;
+                return <span key={`pageLink_${page}`} className={page === currentPage ? "pageLink currentPage" : "pageLink"}> {page} </span>;
 
             })}
-            <span className={ currentPage < totalPages ? "page-next" : "page-next disabled"}> Next </span>
+            <span className={ currentPage < totalPages ? "pageNext" : "pageNext navDisabled"} onClick={handleNextClick}> Next </span>
         </div>
     )
 

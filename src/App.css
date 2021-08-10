@@ -62,3 +62,43 @@ input {
   color: #EEEEEE;
   background-color: #333333;
 }
+
+.summaryText, .searchNavigation {
+  margin: 0 auto;
+  font-size: 1.5rem;
+
+  text-align: center;
+}
+
+.summaryText {
+  color: #999999;
+  margin-bottom: 2rem;
+}
+
+.searchNavigation {
+  color: #999999;
+}
+
+.pageLink {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.pageLink, .pagePrev, .pageNext {
+  cursor: pointer;
+}
+
+.pageLink:hover, .pagePrev:hover, .pageNext:hover {
+  color: #E4002B;
+}
+
+.currentPage, .currentPage:hover {
+  color: #EEEEEE;
+  font-weight: bold;
+  cursor: default;
+}
+
+.navDisabled, .navDisabled:hover {
+  color: #444444;
+  cursor: default;
+}
