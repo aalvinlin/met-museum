@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchNavigation from "./SearchNavigation";
 
 const SearchResults = ({dataRetrieved}) => {
 
     const {total, objectIDs} = dataRetrieved;
+    const [currentPage, setCurrentPage] = useState(1);
+
+    if (Object.keys(dataRetrieved).length === 0)
+        { return <div id="searchResults"></div>; }
+
+    console.log(dataRetrieved);
 
     let summaryText = "No results found."
 
@@ -15,10 +21,10 @@ const SearchResults = ({dataRetrieved}) => {
 
     return (
         <div id="searchResults">
-            <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={1} />
+            <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <p>{summaryText}</p>
             {/* {objectIDs ? objectIDs.map(id => <p key={`result_${id}`}>{id}</p>) : <></>} */}
-            <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={1} />
+            <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
     );
 }

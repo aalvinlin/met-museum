@@ -9,16 +9,19 @@ import './App.css';
 function App() {
 
   const [userInput, setUserInput] = useState("");
-  const [dataRetrieved, setDataRetrieved] = useState([]);
-
+  const [dataRetrieved, setDataRetrieved] = useState({});
+  
   useEffect(() => {
 
-    const queryURL = process.env.REACT_APP_PROXY_SERVER + "/q=" + userInput;
-    console.log("querying", queryURL)
-
-    axios.get(queryURL)
-      .then(results => setDataRetrieved(results.data))
-      .catch(error => console.error(error))
+    // don't query if userInput is an empty string
+    if (userInput)
+      {
+        const queryURL = process.env.REACT_APP_PROXY_SERVER + "/q=" + userInput;
+        
+        axios.get(queryURL)
+          .then(results => setDataRetrieved(results.data))
+          .catch(error => console.error(error))
+      }
   }, [userInput])
 
   return (

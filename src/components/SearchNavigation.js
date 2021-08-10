@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchNavigation = ({totalPages, resultsPerPage, currentPage}) => {
+const SearchNavigation = ({totalPages, resultsPerPage, currentPage, setCurrentPage}) => {
 
     // create array to map over
     let pageLinks = [];
@@ -37,11 +37,13 @@ const SearchNavigation = ({totalPages, resultsPerPage, currentPage}) => {
 
     return (
         <div class="searchNavigation">
+            <span className={ currentPage > 1 ? "page-previous" : "page-previous disabled"}> Previous </span>
             {pageLinks.map(page => {
 
-                return <span key={`pageLink_${page}`}> {page} </span>
+                return <span key={`pageLink_${page}`} className={page === currentPage ? "currentPage" : ""}> {page} </span>;
 
             })}
+            <span className={ currentPage < totalPages ? "page-next" : "page-next disabled"}> Next </span>
         </div>
     )
 
