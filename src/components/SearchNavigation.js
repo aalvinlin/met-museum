@@ -45,12 +45,17 @@ const SearchNavigation = ({totalPages, resultsPerPage, currentPage, setCurrentPa
             { setCurrentPage(currentPage + 1); }
     }
 
+    const handleNewPageClick = newPage => {
+        if (currentPage !== newPage)
+            { setCurrentPage(newPage); }
+    }
+
     return (
         <div class="searchNavigation">
             <span className={ currentPage > 1 ? "pagePrev" : "pagePrev navDisabled"} onClick={handlePrevClick}> Prev </span>
             {pageLinks.map(page => {
 
-                return <span key={`pageLink_${page}`} className={page === currentPage ? "pageLink currentPage" : "pageLink"}> {page} </span>;
+                return <span key={`pageLink_${page}`} className={page === currentPage ? "pageLink currentPage" : "pageLink"} onClick={() => handleNewPageClick(page)}> {page} </span>;
 
             })}
             <span className={ currentPage < totalPages ? "pageNext" : "pageNext navDisabled"} onClick={handleNextClick}> Next </span>
