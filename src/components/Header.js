@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
     return (
       <header>
-          Browse the Metropolitan Museum!
+          Browse the Metropolitan Museum
       </header>  
     );
 }
