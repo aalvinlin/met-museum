@@ -102,3 +102,22 @@ input {
   color: #444444;
   cursor: default;
 }
+
+#searchItemsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  max-width: 1200px;
+  margin: 5vh auto;
+}
+
+.searchResultItem {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25%;
+  min-height: 10vh;
+}
