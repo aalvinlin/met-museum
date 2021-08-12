@@ -16,7 +16,8 @@ function App() {
     // don't query if userInput is an empty string
     if (userInput)
       {
-        const queryURL = process.env.REACT_APP_PROXY_SERVER + "/q=" + userInput;
+        const apiURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=";
+        const queryURL = process.env.REACT_APP_PROXY_SERVER + "/" + apiURL + userInput;
         
         axios.get(queryURL)
           .then(results => setDataRetrieved(results.data))
