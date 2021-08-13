@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SearchForm = ({userInput, setUserInput}) => {
+const SearchForm = ({setSearchQuery}) => {
+
+    const [currentInput, setCurrentInput] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
+        setSearchQuery(currentInput);
     }
 
-    const handleInput = event => {
-        setUserInput(event.target.value);
+    const handleCurrentInput = event => {
+        setCurrentInput(event.target.value);
     }
 
     return (
         <form id="searchForm" onSubmit={handleSubmit}>
             <label htmlFor="searchInput">Search:
-                <input type="searchInput" id="searchInput" onInput={handleInput}></input>
+                <input type="searchInput" id="searchInput" onInput={handleCurrentInput}></input>
             </label>
+            <button type="submit">Go!</button>
         </form>
     );
 }

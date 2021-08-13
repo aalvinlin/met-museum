@@ -8,27 +8,27 @@ import './App.css';
 
 function App() {
 
-  const [userInput, setUserInput] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [dataRetrieved, setDataRetrieved] = useState({});
   
   useEffect(() => {
 
-    // don't query if userInput is an empty string
-    if (userInput)
+    // don't query if searchQuery is an empty string
+    if (searchQuery)
       {
         const apiURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=";
-        const queryURL = process.env.REACT_APP_PROXY_SERVER + "/" + apiURL + userInput;
+        const queryURL = process.env.REACT_APP_PROXY_SERVER + "/" + apiURL + searchQuery;
         
         axios.get(queryURL)
           .then(results => setDataRetrieved(results.data))
           .catch(error => console.error(error))
       }
-  }, [userInput])
+  }, [searchQuery])
 
   return (
     <div className="App">
       <Header />
-      <SearchForm userInput={userInput} setUserInput={setUserInput} />
+      <SearchForm setSearchQuery={setSearchQuery} />
       <SearchResults dataRetrieved={dataRetrieved} />
     </div>
   );

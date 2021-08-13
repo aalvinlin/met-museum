@@ -23,14 +23,12 @@ header {
   padding: 0.5rem;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 label {
   display: block;
-  margin-bottom: 1rem;
 }
 
 input {
@@ -40,7 +38,7 @@ input {
   line-height: 2rem;
   padding-left: 0.5rem;
 
-  margin-left: 1rem;
+  margin: 0 1rem;
   
   font-size: 1.5rem;
   color: #EEEEEE;
@@ -51,6 +49,15 @@ input {
   border-radius: 10px;
 }
 
+button {
+  
+  color: #CCCCCC;
+  font-size: 1.5rem;
+
+  background-color: #222222;
+  border: 5px solid #222222;
+  border-radius: 10px;
+}
 
 /* red used for The Met */
 .red-bg {
