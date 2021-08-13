@@ -118,6 +118,36 @@ input {
   justify-content: center;
   align-items: center;
 
-  width: 25%;
+  width: 22%;
   min-height: 10vh;
+
+  background-color: #222222;
+  box-shadow: 5px 5px #3C3C3C;
+  margin: 0.5rem;
+}
+
+.itemInfoBox {
+  font-size: 1rem;
+  color: #999999;
+  margin: 0.5rem;
+}
+
+.searchResultItem img {
+  max-width: 33%;
+  padding: 0.5rem;
+}
+
+.itemTitle {
+  /* font-size: 1rem; */
+  font-weight: bold;
+  margin: 0;
+}
+
+.itemArtist {
+  color: #666666;
+  margin: 0;
+}
+
+.itemMiscDetails {
+  color: #666666;
 }

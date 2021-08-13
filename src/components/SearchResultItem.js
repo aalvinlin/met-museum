@@ -15,12 +15,11 @@ const SearchResultItem = ({itemID}) => {
     return (
         <div className="searchResultItem">
             <img src={itemDetails.primaryImageSmall} alt={itemDetails.title} />
-            <p className="itemTitle">{itemDetails.title}</p>
-            <p className="itemArtist">{itemDetails.artistDisplayName}</p>
-            <p className="itemMiscDetails">
-                {itemDetails.objectDate}<br />
-                {itemDetails.medium}<br />
-            </p>
+            <div className="itemInfoBox">
+                <p className="itemTitle">{itemDetails.title}</p>
+                <p className="itemArtist">{itemDetails.artistDisplayName}</p>
+                
+            </div>
         </div>
     )
 }
