@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchNavigation from "./SearchNavigation";
 import SearchResultItem from "./SearchResultItem";
 
-const SearchResults = ({dataRetrieved}) => {
+const SearchResults = ({dataRetrieved, currentPage, setCurrentPage}) => {
 
     const {total, objectIDs} = dataRetrieved;
-    const [currentPage, setCurrentPage] = useState(1);
-
+    
     if (Object.keys(dataRetrieved).length === 0 || !objectIDs)
         { return <div id="searchResults"></div>; }
-
-    console.log(dataRetrieved);
 
     let summaryText = "No results found."
 

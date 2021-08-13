@@ -10,6 +10,7 @@ function App() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [dataRetrieved, setDataRetrieved] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
 
@@ -28,8 +29,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchForm setSearchQuery={setSearchQuery} />
-      <SearchResults dataRetrieved={dataRetrieved} />
+      <SearchForm setSearchQuery={setSearchQuery} setCurrentPage={setCurrentPage} />
+      <SearchResults dataRetrieved={dataRetrieved} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 }

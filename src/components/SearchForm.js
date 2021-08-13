@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-const SearchForm = ({setSearchQuery}) => {
+const SearchForm = ({setSearchQuery, setCurrentPage}) => {
 
     const [currentInput, setCurrentInput] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
         setSearchQuery(currentInput);
+        setCurrentPage(1);
     }
 
     const handleCurrentInput = event => {
