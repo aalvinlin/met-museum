@@ -116,13 +116,13 @@ button {
   flex-wrap: wrap;
 
   max-width: 1200px;
-  margin: 5vh auto;
+  margin: 1rem auto;
 }
 
 .searchResultItem {
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   width: 22%;
