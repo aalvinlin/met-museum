@@ -10,7 +10,7 @@ const SearchResultItem = ({itemID}) => {
         axios.get("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + itemID)
             .then(results => setItemDetails(results.data))
             .catch(error => console.error(error))
-    }, []);
+    }, [itemID]);
 
     return (
         <div className="searchResultItem">
