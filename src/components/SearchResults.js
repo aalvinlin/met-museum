@@ -6,8 +6,6 @@ const SearchResults = ({dataRetrieved, currentPage, setCurrentPage}) => {
 
     const {total, objectIDs} = dataRetrieved;
     
-    console.log("data retrieved", dataRetrieved)
-
     // user has not searched for anything yet
     if (Object.keys(dataRetrieved).length === 0)
         { return <div id="searchResults"></div>; }
