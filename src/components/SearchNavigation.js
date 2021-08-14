@@ -51,7 +51,7 @@ const SearchNavigation = ({totalPages, resultsPerPage, currentPage, setCurrentPa
     }
 
     return (
-        <div class="searchNavigation">
+        <div className="searchNavigation">
             <span className={ currentPage > 1 ? "pagePrev" : "pagePrev navDisabled"} onClick={handlePrevClick}> Prev </span>
             {pageLinks.map(page => {
 

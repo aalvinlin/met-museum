@@ -20,10 +20,10 @@ const SearchResults = ({dataRetrieved, currentPage, setCurrentPage}) => {
 
     return (
         <div id="searchResults">
-            <p class="summaryText">{summaryText}</p>
+            <p className="summaryText">{summaryText}</p>
             <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             <div id="searchItemsContainer">
-                {currentView.map(itemID => <SearchResultItem itemID={itemID} />)}
+                {currentView.map(itemID => <SearchResultItem key={"item_" + itemID} itemID={itemID} />)}
             </div>
             <SearchNavigation totalPages={totalPages} resultsPerPage={resultsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
