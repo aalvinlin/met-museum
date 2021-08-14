@@ -6,13 +6,17 @@ const SearchResults = ({dataRetrieved, currentPage, setCurrentPage}) => {
 
     const {total, objectIDs} = dataRetrieved;
     
-    if (Object.keys(dataRetrieved).length === 0 || !objectIDs)
+    console.log("data retrieved", dataRetrieved)
+
+    // user has not searched for anything yet
+    if (Object.keys(dataRetrieved).length === 0)
         { return <div id="searchResults"></div>; }
 
-    let summaryText = "No results found."
+    // search successful but returned no results
+    if (total === 0)
+        { return <div id="searchResults"><p className="summaryText">No results found.</p></div>; }
 
-    if (total > 0)
-        { summaryText = `Found ${total.toLocaleString()} results.`; }
+    const summaryText = `Found ${total.toLocaleString()} results.`;
 
     const resultsPerPage = 12;
     const totalPages = Math.ceil(total / resultsPerPage);
